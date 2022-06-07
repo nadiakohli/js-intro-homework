@@ -11,12 +11,10 @@ const currentUser = {
 };
 
 const copyObject = (input) => {
-  if (typeof input !== 'object') {
-    return input;
-  };
+  if (typeof input !== 'object') return input;
 
   const copy = {};
-  for (key in input) {
+  for (let key in input) {
     copy[key] = copyObject(input[key]);
   }
   return copy;
